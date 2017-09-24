@@ -1,0 +1,85 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Getting Started Extension's Popup</title>
+    <style type="text/css">
+      body {
+        width: 400px;
+        min-height: 200px;
+        margin: 10px;
+        white-space: nowrap;
+      }
+      
+      #container {
+        margin-top: 30px;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 20px;
+        font-weight: normal;
+      }
+      
+      h2 {
+        font-size: 15px;
+        color: #444;
+        font-weight: normal;
+      }
+      
+      #row-num {
+        padding: 5px 8px;
+        width: 100px;
+        margin-right: 15px;
+      }
+      
+      #column-num {
+        padding: 5px 8px;
+        width: 100px;
+      }
+      
+      #start-btn {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 0px;
+        background-color: #0071c5;
+        color: #FFF;
+        font-weight: bold;
+      }
+      
+      #result {
+        color: #0071c5;
+        font-size: 18px;
+      }
+      
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+    -->
+    <script src="jquery.js"></script>
+    <script src="popup.js"></script>
+  </head>
+
+  <body>
+    <h1>Raffle for the $50 gift card.</h1>
+    <div id="container">
+      <h2>Define rows and columns in the room.</h2>
+      <input type="text" id="row-num" placeholder="# of rows" />
+      <input type="text" id="column-num" placeholder="# of columns" />
+      <br></br>
+      <button id="start-btn">START</button>
+      <br></br>
+      <h2 id="result"></h2>
+      <br></br>
+    </div>
+  </body>
+</html>
